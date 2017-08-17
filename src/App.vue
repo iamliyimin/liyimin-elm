@@ -1,12 +1,20 @@
 <template>
   <div id="app">
+    <v-header></v-header>
+    <v-footer></v-footer>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import header from './components/head/head.vue'
+import footer from './components/footer/footer.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'v-header': header,
+    'v-footer': footer
+  }
 }
 </script>
 
