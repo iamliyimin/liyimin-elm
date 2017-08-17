@@ -11,7 +11,7 @@
       </ul>
     </div>
    <!-- 固定搜索框 -->
-    <div class="search">
+    <div :class="{search: issearch, searchFixed: issearchFixed}">
       <!-- 搜索按钮（图标） -->
       <router-link to="/search" class="routerlink">
         <mt-button icon="search" class="searchBtn">搜索商家、商品名称</mt-button>
@@ -40,10 +40,26 @@ export default {
         {text: '幸福西饼', id: '4'},
         {text: '柳州螺蛳粉', id: '5'},
         {text: '公仔面', id: '6'}
-      ]
+      ],
+      issearchFixed: false,
+      issearch: true
     }
   },
   methods: {
+    handleScroll () {
+      this.scroll = document.body.scrollTop
+      // console.log(this.scroll)
+      if (this.scroll > 25) {
+        this.issearch = false
+        this.issearchFixed = true
+      } else {
+        this.issearch = true
+        this.issearchFixed = false
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -100,25 +116,33 @@ export default {
     background: rgba(0,169,253,1)
     width: 100%
     height: 0.4rem
-    position: fixed
-    top: 0.41rem
-    left: 0
-    padding: 0
+    position: absoluted
+    z-index: 2
+    margin-top: -0.9rem
     padding-top: 0.1rem
-    /*搜索框外层的路由导航*/
-    .routerlink
-      overflow: hidden
-      width: 90%
-      float: left
-      height: 0.3rem
-      margin-left: 5%
-      /*搜索框*/
-      .searchBtn
-        float: left
-        width: 100%
-        height: 100%
-        background: #FFFFFF
-        border-radius: 0
-        font-size: 0.1rem
-        color: rgba(169,169,169,1)
+  .searchFixed
+    overflow: hidden
+    background: rgba(0,169,253,1)
+    width: 100%
+    height: 0.4rem
+    position: fixed
+    z-index: 2
+    top: 0
+    padding-top: 0.1rem
+/*搜索框外层的路由导航*/
+.headWrap .search .routerlink, .headWrap .searchFixed .routerlink
+  overflow: hidden
+  width: 90%
+  float: left
+  height: 0.3rem
+  margin-left: 5%
+  /*搜索框*/
+  .searchBtn
+    float: left
+    width: 100%
+    height: 100%
+    background: #FFFFFF
+    border-radius: 0
+    font-size: 0.1rem
+    color: rgba(169,169,169,1)
 </style>

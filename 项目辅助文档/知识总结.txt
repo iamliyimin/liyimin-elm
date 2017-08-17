@@ -8,3 +8,8 @@
 
      *mintui的headder组件里面的子组件必须要用slot属性设置位置，而且该属性只有两个值：left和right。
 
+
+elm:
+src/page/msite/msite.vue: 外卖页
+src/service/getData.js: 获取数据
+src/config
