@@ -1,0 +1,10 @@
+************************************************高仿饿了么手机app***********************************
+使用到的技术： vuejs、vue-cli、vue-router、vue-resource、webpack、stylu、mintui、github
+
+1.  Mint UI
+      *引用组件的两种方式：
+	1. 在main.js文件中全局引入，在各个组件模块中用==this.$组件名== 去调用
+	2. 在main.js文件中全局引入，在各个模块中再单独用import引入，然后在js代码中可以直接用==组件名.==去调用了
+
+     *mintui的headder组件里面的子组件必须要用slot属性设置位置，而且该属性只有两个值：left和right。
+

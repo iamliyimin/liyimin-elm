@@ -1,0 +1,68 @@
+1. mintui的headder组件里面的子组件必须要用slot属性设置位置，而且该属性只有两个值：left和right。我本来想在header里放一个搜索框的，但后来因为这个原因
+   折腾了好久，最终解决了。但新的问题又来了，mintui的搜索框样式不是我想要的，但我又没办法局部覆盖它的样式，只能全局修改。但这样的话就会影响整个系统
+   的搜索框的样式。最后没办法只能放弃mintui的这两个组件了，用了普通的html标签去写了header部分的内容。
+
+2. 移动端字体和高度自适应问题: 一开始随便给父元素html设置一个font-size，结果发现字体和高度无法随设备的改变而适应
+**************************
+   原因： 没有设置自适应的解决方案。
+*****************************
+   解决方案： （网上有很多种解决方案：写媒体查询、写js，但我用了之后都没有效果）
+		****************************
+		  我的做法是： 用html{font-size: calc(100vw/3.75)} 去设置父元素的font-size
+		***************************
+		  ( 100vw是设备的宽度，除以3.75可以让1rem的大小在iPhone6下等于100px 。因为iPhone6的设备宽度是375px，所以这里用3.75)
+*******
+长度单位
+css3引入的”vw”和”vh”基于宽度/高度相对于窗口大小，
+”vw”=”view width”, “vh”=”view height”; 
+以上我们称为视窗单位允许我们更接近浏览器窗口来定义大小。 
+举例：
+.demo {
+   width: 100vw;
+   font-size: 10vw; /* 宽度为窗口100%， 字体大小为窗口的10% */
+}
+
+
+
+
+
+
+2. 安装npm install时报错：
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\ch
+okidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
+1.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"}
+)
+npm ERR! Windows_NT 6.1.7601
+npm ERR! argv "D:\\nodejs\\node.exe" "D:\\nodejs\\node_modules\\npm\\bin\\npm-cl
+i.js" "install"
+npm ERR! node v6.11.1
+npm ERR! npm  v3.10.10
+npm ERR! code ELIFECYCLE
+
+npm ERR! phantomjs-prebuilt@2.1.15 install: `node install.js`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the phantomjs-prebuilt@2.1.15 install script 'node install.js
+'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the phantomjs-prebuilt pa
+ckage,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node install.js
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs phantomjs-prebuilt
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls phantomjs-prebuilt
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     D:\liyimin-mintui\liyimin-elm\npm-debug.log
+
+原因：所安装的依赖包phantomjs-prebuilt没有在线安装成功，跟网络环境有关
+解决方法：
+1. 使用vpn进行npm install；或者使用国内镜像安装；
+2. 之后每次需要安装时，直接使用本地缓存的下载包；npm install phantomjs-prebuilt@2.1.14 --ignore-script
+
