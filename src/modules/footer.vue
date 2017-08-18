@@ -2,23 +2,23 @@
   <div class="footerWrap">
     <div class="footer">
       <ul class="footList">
-        <router-link to="/">
-          <li><img src="../../assets/images/饿了么.png"><span>外卖</span></li>
+        <router-link to="/Father/takeOut">
+          <li><img src="../assets/images/footer/饿了么.png"><span>外卖</span></li>
         </router-link>
-        <router-link to="/search">
-          <li><img src="../../assets/images/发现.png"><span>发现</span></li>
+        <router-link to="/Father/searchs">
+          <li><img src="../assets/images/footer/发现.png"><span>发现</span></li>
         </router-link>
-        <router-link to="/search">
-          <li><img src="../../assets/images/订单.png"><span>订单</span></li>
+        <router-link to="">
+          <li><img src="../assets/images/footer/订单.png"><span>订单</span></li>
         </router-link>
-        <router-link to="/search">
-          <li><img src="../../assets/images/我的.png"><span>我的</span></li>
+        <router-link to="">
+          <li><img src="../assets/images/footer/我的.png"><span>我的</span></li>
         </router-link>
       </ul>
     </div>
   </div>
 </template>
-<script>
+<script type="text/ecmascript-6">
 export default {
   data () {
     return {
@@ -39,9 +39,9 @@ export default {
     bottom: 0
     width: 100%
     height: 0.7rem
-    background: #FFFFF
-    box-sizing: border-box;
-    border-top: 0.0001rem solid rgba(148,148,148,0.5)
+    background: #FFFFFF
+    box-sizing: border-box
+    border-top: 0.0001rem solid rgba(148,148,148,0.3)
     /*footer层的ul*/
     .footList
       overflow: hidden
@@ -52,14 +52,13 @@ export default {
       margin: 0 auto
       padding: 0
       padding-top: 0.1rem
-      background: #FFFFF
+      background: #FFFFFF
       /*footer层的li*/
       li
         float: left
         display: inline-block
         width: 25%
         height: 100%
-        background: #FFFFF
         /*footer层每一项的图标*/
         img
           display: block

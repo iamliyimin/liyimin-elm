@@ -1,18 +1,10 @@
 <template>
   <div id="app">
-    <v-footer></v-footer>
     <router-view></router-view>
   </div>
 </template>
 
-<script>
-import footer from './components/footer/footer.vue'
-export default {
-  name: 'app',
-  components: {
-    'v-footer': footer
-  }
-}
+<script type="text/ecmascript-6">
 </script>
 
 <style lang="stylus-loader" rel="stylesheet/stylus">
@@ -33,4 +25,6 @@ body
   opacity: 1
 .mint-swipe-indicator.is-active
   background: rgba(0,169,253,1)
+.mint-cell-wrapper
+  font-size: 0.16rem
 </style>

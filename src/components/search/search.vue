@@ -1,7 +1,9 @@
 <template>
   <mt-header fixed class="headBox">
-      <mt-button icon="back" slot="left">dvdfg
+    <router-link slot="left" to="takeOut">
+      <mt-button icon="back">搜索模块
       </mt-button>
+    </router-link>
   </mt-header>
 </template>
 
@@ -30,7 +32,7 @@ export default {
 <style scoped lang="stylus-loader" rel="stylesheet/stylus">
   .headBox
     background: #3190E8
-    height: 1.95rem
+    /*height: 1.95rem*/
     /*.mt-button
       display: flex
       text-align: center*/

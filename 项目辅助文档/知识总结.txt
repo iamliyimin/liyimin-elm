@@ -8,6 +8,12 @@
 
      *mintui的headder组件里面的子组件必须要用slot属性设置位置，而且该属性只有两个值：left和right。
 
+2. rem自适应
+	*第一步：在.html文件中加入**<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">**
+	*第二步：给父元素html设置font-size: calc(100vw/3.75)
+
+
+
 
 elm:
 src/page/msite/msite.vue: 外卖页
